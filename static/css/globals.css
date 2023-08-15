@@ -1,0 +1,117 @@
+@font-face {
+    font-family:"minecraft";
+    src:url("/fonts/minecraft.woff2") format("woff2");
+    font-display:fallback;
+}
+
+body {
+    background-image: url("/img/hearts_optimised.png");
+    background-size: 25vw;
+    font-family:"minecraft";
+    max-width: 100%;
+}
+
+button {
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #f4a1a8;
+    letter-spacing: 5px;
+}
+
+p, sub, small {
+    color: #ac9a9b;
+    letter-spacing: 5px;
+}
+
+.container {
+    margin: 25px auto;
+    border: 3px #c38f93 solid;
+    text-align: center;
+    background-color: #ffedee;
+    width: 75%;
+}
+
+.title-container {
+    width: fit-content;
+    padding: 0 75px;
+}
+
+.highlight {
+    background-color: #f4a1a8;
+    color: white;
+    width: 133px;
+    padding: 0 30px;
+    padding-bottom: 4px;
+}
+
+.flex-container {
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.centered {
+    max-width: 65%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.margin-top {
+    margin-top: 20px;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+.flex-center > img {
+    padding: 0 15px;
+}
+
+.small-line-height {
+    line-height: 1.3em;
+}
+
+.left-pad {
+    text-align: left;
+    max-width: 50%;
+    margin: 0 25px;
+    text-align: center;
+}
+
+.arrows > img:nth-child(1) {
+    margin-right: 10px;
+}
+
+.arrows > img:nth-child(3) {
+    margin-left: 10px;
+} 
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1477px) {
+    .flex-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .flex-container > img {
+        padding: 15px;
+    }
+
+    .left-pad {
+        margin-left: 0;
+    }
+}
