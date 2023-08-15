@@ -1,6 +1,7 @@
 import express from "express"
 import compression from "compression"
 import cors from "cors"
+import helmet from "helmet"
 import fs from "fs"
 import path from "path"
 const app = express()
@@ -9,6 +10,13 @@ app.use(cors())
 app.use(compression())
 app.use(express.json())
 app.use(express.static("static"))
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            "default-src": ["'self'"]
+        }
+    }
+}))
 
 function getImages() {
     return fs.readdirSync(path.resolve("./static/img/slideshow"))
