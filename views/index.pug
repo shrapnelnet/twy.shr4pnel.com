@@ -5,6 +5,10 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="preload" as="style" href="/css/globals.css")
         link(rel="stylesheet" href="/css/globals.css")
+        each image in pageImages
+            link(rel="preload" as="image" href=image)
+        each image in slideshow
+            link(rel="prefetch" as="image" href=image)
         title twylang 
     body 
         header

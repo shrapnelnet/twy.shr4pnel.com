@@ -22,9 +22,20 @@ function getImages() {
     return fs.readdirSync(path.resolve("./static/img/slideshow"))
 }
 
+function getPageImages() {
+    return fs.readdirSync(path.resolve("./static/img"))
+    .filter((item) => item.includes(".png"))
+    .map((item) => {
+        item = `/img/${item}`
+        return item
+    })
+}
+
 app.get("/", (_req, res) => {
     const images = getImages()
-    res.render("index.pug", { initialImgSrc: `/img/slideshow/${images[0]}`})
+    const fullImagePathArray = images.map((item) => {return `/img/slideshow/${item}`})
+    const pageImages = getPageImages()
+    res.render("index.pug", { initialImgSrc: `/img/slideshow/${images[0]}`, pageImages, slideshow: fullImagePathArray})
 })
 
 app.get("/api/getSlideshowImages", (_req, res) => {
